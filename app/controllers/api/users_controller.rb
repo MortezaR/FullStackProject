@@ -1,22 +1,13 @@
 class Api::UsersController < ApplicationController
-    def new
-        @user = User.new
-    end
-
     def create
-        @user = User.new(user_params)
+        @user = User.new(params.require(:user).permit(:password, :username, :email))
+        p @user
+        p params
         if @user.save
             sign_in(@user)
-            render :new # this route needs to be changed
+            render :show
         else
-            # flash.now[:errors] = @user.errors.full_messages 
-            # this needs to check for errors and send them in correctly
-            render :new # this route needs to be changed
+            render json: {user: nil, errors: @user.errors.full_messages}, status: 422
         end
-    end
-
-    private
-    def user_params
-        params.require(:user).permit(:password, :username)
     end
 end
