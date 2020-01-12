@@ -9,8 +9,10 @@ import Root from './components/Root'
 document.addEventListener("DOMContentLoaded", () => {
     
     const root = document.getElementById("root");
-    // ReactDOM.render(<h1>Welcome to myFace</h1>, root);
 
+    //------------
+
+    // window.store = configureStore();
     //------------
     if (window.currentUser) {
         const preloadedState = {

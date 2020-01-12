@@ -1,0 +1,94 @@
+#login_form_button {
+    color: white;
+    background-color: #3578E5;
+    border: 1px solid #29487d;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 18px;
+    margin-left: 20px;
+    margin-right: 10px;
+    margin-top: 14px;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    white-space: nowrap;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+
+}
+#login_form_button:hover {
+    background-color: #3b5998;
+}
+
+.login_form {
+    background-color: #3b5998;
+    display:flex;
+    justify-content: space-around;
+    height: 85px;
+    border-bottom: 1px solid #133783;
+    padding-left: 30px;
+    padding-right: 30px;
+    align-items: center;
+    background-image: linear-gradient(#4267B2, #3b5998);
+
+}
+.login_input {
+    display:flex;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.email_input{
+    display: block;
+    align-content: space-between;
+    float:left;
+    margin-right:20px;
+}
+#email_label{
+    display: block;
+    color:white;
+    font-size: 12px;
+    font-family: Helvetica, Arial, sans-serif;
+    padding-bottom: 4px;
+    padding-left: 1px;
+}
+.password_input{
+    display: block;
+    align-content: space-between;
+    float:left;
+}
+#email_input_box{
+    width: 142px;
+    height: 15px;
+    padding: 3px;
+    border: 1px solid #1d2a5b;
+}
+#password_input_box{
+    width: 142px;
+    height: 15px;
+    padding: 3px;
+    border: 1px solid #1d2a5b;
+
+}
+#password_label{
+    display: block;
+    color:white;
+    font-size: 12px;
+    font-family: Helvetica, Arial, sans-serif;
+    padding-bottom: 4px;
+    padding-left: 1px;
+}
+
+#facebook_logo{
+    font-size: 60px;
+    font-family: Facebook Letter Faces, Arial;
+    color: white;
+}
+.error_message{
+    font-size: 30px;
+    font-family: Facebook Letter Faces, Arial;
+    color: white;
+}

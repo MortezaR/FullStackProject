@@ -1,0 +1,130 @@
+.sign_up_form{
+    display: flex;
+    justify-content: center;
+    background: #edf0f5
+}
+.sign_up_form > *{
+    margin-left: 75px;
+    margin-right: 75px;
+    margin-top: 20px;
+    
+}
+.sign_up_input {
+    display:flex;
+    align-items: center;
+    margin-right: 30px;
+}
+.input_su{
+    display: flex;
+    justify-content: space-between;
+}
+.input_box_su{
+    width: 399px;
+    height: 21px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 18px;
+    border: 1px solid #bdc7d8;
+;
+    border-radius:5px 5px 5px 5px;
+    margin-bottom: 10px;
+    
+}
+.sign_up_ad_section{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+.sign_up_ad_section_header{
+    font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif !important;
+    font-weight: bold !important;
+    letter-spacing: normal;
+    text-rendering: optimizelegibility;
+    color: #333;
+    padding: 42px 0 24px;
+    font-size: 28px;
+    line-height: 36px;
+}
+.sign_up_ad_section_body{
+    font-size: 17px;
+    line-height: 22px;
+    margin: 14px;
+}
+.sign_up_ad_section_body_span1{
+    font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif !important;
+    font-weight: bold !important;
+    letter-spacing: normal;
+    text-rendering: optimizelegibility;
+    font-size: 17px;
+    line-height: 22px;
+    color: #333;
+}
+.sign_up_ad_section_body_span2{
+    font-size: 15px;
+    line-height: 20px;
+    color:#666;
+    margin-left: 2px;
+    /* line-height: 22px; */
+}
+
+.sign_up_header{
+    font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif !important;
+    font-weight: 550;
+    letter-spacing: normal;
+    text-rendering: optimizelegibility;
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 5px;
+    line-height: 120%;
+}
+.sign_up_header_2{
+    font-family: 'Freight Sans', Helvetica, Arial, sans-serif !important;
+    font-weight: lighter;
+    letter-spacing: normal;
+    text-rendering: optimizelegibility;
+    font-size: 19px;
+    margin-bottom: 20px;
+    color: #333;
+    line-height: 126%;
+}
+.sign_up_input{
+    display: flex;
+    flex-direction: column;
+}
+.name_box{
+    width:182px;
+}
+.name_box_holder{
+    width: 420px;
+}
+
+#sign_up_button{
+    font-size: 19px;
+    font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif !important;
+    font-weight: bold !important;
+    letter-spacing: normal;
+    text-rendering: optimizelegibility;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: linear-gradient(#67ae55, #578843);
+    background-color: #69a74e;
+    box-shadow: inset 0 1px 1px #a4e388;
+    border-color: #3b6e22 #3b6e22 #2c5115;
+    min-width: 194px;
+    padding: 7px 20px;
+    text-align: center;
+    border: 1px solid;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    letter-spacing: 1px;
+    position: relative;
+    text-shadow: 0 1px 2px rgba(0,0,0,.5);
+}
+#sign_up_button:hover{
+    filter: brightness(107%);
+}
