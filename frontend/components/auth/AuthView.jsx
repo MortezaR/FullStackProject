@@ -12,9 +12,7 @@ class AuthView extends Component {
         return (
             <div>
                 <div >
-                    <div>
                         <LoginFormContainer />
-                    </div>
                 </div>
                 <div>
                     <SignupFormContainer />

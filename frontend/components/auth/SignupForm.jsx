@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import randomWords from 'random-words'
 
 
 class SignupForm extends Component {
@@ -13,6 +14,10 @@ class SignupForm extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleUsername = this.handleUsername.bind(this);
         this.handlePassword = this.handlePassword.bind(this);
+        this.handleFirstName = this.handleFirstName.bind(this);
+        this.handleLastName = this.handleLastName.bind(this);
+        this.handleGender = this.handleGender.bind(this);
+        this.generateRandomUser = this.generateRandomUser.bind(this);
     }
     handleSubmit(e) {
         e.preventDefault();
@@ -28,9 +33,28 @@ class SignupForm extends Component {
     handlePassword(e) {
         this.setState({ password: e.currentTarget.value });
     }
+    handleFirstName(e) {
+        this.setState({ first_name: e.currentTarget.value });
+    }
+    handleLastName(e) {
+        this.setState({ last_name: e.currentTarget.value });
+    }
+    handleGender(e) {
+        this.setState({ gender: e.currentTarget.value });
+    }
+    generateRandomUser(){
+        let un = randomWords() + '@' + randomWords() + '.com';
+        this.setState( { first_name: randomWords(),
+        last_name: randomWords(),
+        gender: 'other',
+        username: un,
+        email: un,
+        password: randomWords()});
+
+    }
 
     render() {
-        const { username, password } = this.state;
+        const { username, password, first_name, last_name } = this.state;
         return (
             <div className='sign_up_form'>
                 <div className='sign_up_ad_section'>
@@ -55,9 +79,9 @@ class SignupForm extends Component {
                     <form className='sign_up_input' onSubmit={this.handleSubmit}>
                         <div className='input_su name_box_holder'>
                             <input placeholder='First Name' type="text" className='input_box_su name_box'
-                             value={username} onChange={this.handleUsername} />
+                             value={first_name} onChange={this.handleFirstName} />
                             <input placeholder='Last Name' type="text" className='input_box_su name_box'
-                             value={username} onChange={this.handleUsername} />
+                             value={last_name} onChange={this.handleLastName} />
                         </div>
                         <div className='input_su'>
                             <input placeholder='Email' type="text" className='input_box_su' value={username} onChange={this.handleUsername} />
@@ -70,13 +94,13 @@ class SignupForm extends Component {
                         </div>
                         <div className='input_su input_su_radio'>
                             <div className='radio-div'>
-				                <input type="radio" name='Gender' className="radio_button" value="female" />Female
+                                <input type="radio" name='Gender' className="radio_button" value="female" onChange={this.handleGender}/>Female
                             </div>
                             <div className='radio-div'>
-                                <input type="radio" name='Gender' className="radio_button" value="male" />Male
+                                <input type="radio" name='Gender' className="radio_button" value="male" onChange={this.handleGender}/>Male
                             </div>  
                             <div className='radio-div'>
-                                <input type="radio" name='Gender' className="radio_button" value="other" />Other
+                                <input type="radio" name='Gender' className="radio_button" value="other" onChange={this.handleGender}/>Other
                             </div>  
                         </div>
                         <div className='input_su'>
@@ -86,8 +110,8 @@ class SignupForm extends Component {
                                 If you have any questions, please stop having them.
                             </span>
                         </div>
-                        <input type="submit" id='sign_up_button' value='Sign Up' />
-                        <button id='sign_up_button'>Demo Log In</button>
+                        <input type="submit" className='sign_up_button' value='Sign Up' />
+                        <button className='sign_up_button' onClick={this.generateRandomUser}>Demo Log In</button>
                     </form>
                 </div>
                 

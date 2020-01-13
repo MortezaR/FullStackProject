@@ -7,14 +7,15 @@ export const signup = user => {
     }));
 };
 
-export const login = user => (
-    $.ajax({
-        url: "/api/session/",
+export const login = user => {
+    console.log(user);
+    return( $.ajax({
+        url: "/api/session",
         method: "POST",
-        data: { user },
+        data: { user:{ username: user.username, password: user.password}},
         dataType: "JSON"
-    })
-);
+    }));
+};
 export const logout = () => (
     $.ajax({
         url: '/api/session',
