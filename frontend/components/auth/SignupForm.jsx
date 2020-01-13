@@ -65,7 +65,29 @@ class SignupForm extends Component {
                         <div className='input_su'>
                             <input placeholder='New password' type="password" className='input_box_su' value={password} onChange={this.handlePassword} />
                         </div>
+                        <div className='input_su'>
+                            <span className='gen_bir_tag'>Gender</span>
+                        </div>
+                        <div className='input_su input_su_radio'>
+                            <div className='radio-div'>
+				                <input type="radio" name='Gender' className="radio_button" value="female" />Female
+                            </div>
+                            <div className='radio-div'>
+                                <input type="radio" name='Gender' className="radio_button" value="male" />Male
+                            </div>  
+                            <div className='radio-div'>
+                                <input type="radio" name='Gender' className="radio_button" value="other" />Other
+                            </div>  
+                        </div>
+                        <div className='input_su'>
+                            <span id='disclosure_text'>
+                                By clicking sign-up, you are willing to trade away<br />
+                                everything you own for the betterment of humanity.<br />
+                                If you have any questions, please stop having them.
+                            </span>
+                        </div>
                         <input type="submit" id='sign_up_button' value='Sign Up' />
+                        <button id='sign_up_button'>Demo Log In</button>
                     </form>
                 </div>
                 
