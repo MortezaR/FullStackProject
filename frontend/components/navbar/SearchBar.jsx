@@ -8,8 +8,9 @@ class SearchBar extends Component {
     render() {
         return (
             <div>
-                <form>
-                    <input type="search" placeholder="Search" />
+                <form className='navbar_form'>
+                    <input className='navbar_search' type="text" placeholder="Search" />
+                    <button className='navbar_search_button'>&#128269;</button>
                 </form>
             </div>
         )

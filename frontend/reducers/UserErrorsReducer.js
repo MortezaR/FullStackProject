@@ -1,4 +1,4 @@
-import { RECEIVE_ERRORS } from "../actions/user";
+import { RECEIVE_ERRORS } from "../actions/user_actions";
 
 const UserErrorsReducer = (prevState = [], action) => {
     switch (action.type) {

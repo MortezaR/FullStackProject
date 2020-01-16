@@ -12,9 +12,9 @@ const receivePost = payload => ({
     type: RECEIVE_POST,
     payload
 });
-const removePost = payload => ({
+const removePost = postId => ({
     type: REMOVE_POST,
-    payload
+    postId
 });
 const receiveErrors = (payload) => ({
     type: RECEIVE_ERRORS,
@@ -48,7 +48,7 @@ export const updatePost = (cur_user, post) => dispatch => {
 }
 export const deletePost = (cur_user, postId) => dispatch => {
     return (PostApiUtil.deletePost(cur_user, postId).then(
-        payload => dispatch(removePost(payload)),
+        () => dispatch(removePost(postId)),
         payload => dispatch(receiveErrors(payload.responseJSON))
     ));
 }

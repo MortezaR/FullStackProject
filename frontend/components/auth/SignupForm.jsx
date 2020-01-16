@@ -20,7 +20,6 @@ class SignupForm extends Component {
     }
     handleSubmit(e) {
         e.preventDefault();
-        console.log(this.state);
         const user = Object.assign({}, this.state);
         this.props.signup(user);
     }

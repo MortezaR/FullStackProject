@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import Post from './Post' 
+import PostContainer from './PostContainer' 
+import PostFormContainer from './PostFormContainer';
 
 
 class PostIndex extends Component {
@@ -13,11 +14,16 @@ class PostIndex extends Component {
     render() {
         return (
             <div>
+                <br></br>
+                <div>
+                    <PostFormContainer />
+                </div>
+                <br></br>
                 <ul>
                     {
                         // if(this.props.posts !== {}){
                         this.props.posts.map((post) => (
-                            <Post key={post.id} post={post} fetchUser={this.props.fetchUser}/>
+                            <PostContainer key={post.id} post={post}/>
                         ))
                         // }
                     }

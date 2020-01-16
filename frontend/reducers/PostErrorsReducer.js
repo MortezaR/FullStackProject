@@ -1,4 +1,4 @@
-import { RECEIVE_ERRORS } from "../actions/post";
+import { RECEIVE_ERRORS } from "../actions/post_actions";
 
 const PostErrorsReducer = (prevState = [], action) => {
     switch (action.type) {

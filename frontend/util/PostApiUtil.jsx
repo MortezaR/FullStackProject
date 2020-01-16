@@ -24,7 +24,7 @@ export const updatePost = (cur_user,post) => {
         dataType: "JSON"
     }));
 };
-export const removePost = (cur_user,postId) => {
+export const deletePost = (cur_user,postId) => {
     return ($.ajax({
         url: `/api/users/${cur_user}/posts/${postId}`,
         method: "DELETE"

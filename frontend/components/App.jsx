@@ -8,7 +8,7 @@ const App = () => (
     <div>
         <AuthRoute exact path='/' component={AuthViewContainer} />
         <ProtectedRoute exact path='/' component={HomeViewContainer} />
-        <ProtectedRoute exact path='/profile' component={ProfileViewContainer} />
+        <ProtectedRoute path='/profile' component={ProfileViewContainer} />
     </div>
 );
 

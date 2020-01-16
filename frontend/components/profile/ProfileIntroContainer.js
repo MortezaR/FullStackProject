@@ -1,12 +1,13 @@
 import { connect } from "react-redux";
 import { logout } from "../../actions/session_actions";
 
-import ProfileView from "./ProfileView";
+import Intro from "./ProfileIntro";
 
 const mapStateToProps = state => ({
+    currentUser: state.entities.users[state.session.id]
 });
 const mapDispatchToProps = dispatch => ({
-    logout: () => dispatch(logout())
+    
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProfileView);
+export default connect(mapStateToProps, mapDispatchToProps)(Intro);

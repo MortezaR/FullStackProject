@@ -1,7 +1,7 @@
 import { 
     RECEIVE_POST,
     RECEIVE_POSTS,
-    DELETE_POST } from "../actions/post";
+    REMOVE_POST } from "../actions/post_actions";
 
 const PostsReducer = (prevState = {}, action) => {
     Object.freeze(prevState);
@@ -12,8 +12,8 @@ const PostsReducer = (prevState = {}, action) => {
         case RECEIVE_POST:
             nextState[action.payload.post.id] = action.payload.post;
             return nextState;
-        case DELETE_POST:
-            delete nextState[action.payload.post.id];
+        case REMOVE_POST:
+            delete nextState[action.postId];
             return nextState;
         default:
             return prevState;

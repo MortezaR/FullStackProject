@@ -49,9 +49,9 @@ class Api::PostsController < ApplicationController
 
     def destroy
         @post = Post.find_by(id: params[:id])
-        if !(is_user_or_friend?(params[:user_id].to_i))
+        if !(is_user?(params[:user_id].to_i))
             render json: {errors: ['you do not have access to this user'] }, status: 422
-        elsif destroy(@post)
+        elsif @post.destroy
             render json: {}
         else
             render json: {errors: @post.errors.full_messages}, status: 422
