@@ -1,0 +1,19 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: #4267b2;
+    border-bottom: 1px solid #29487d;
+    color: #fff;
+}
+.navbar_button_container {
+    display: flex;
+    
+}
+
+.navbar_button {
+    width: 60px;
+    height: 43px;
+    background-color: inherit;
+    border: none;
+    color:white;
+}

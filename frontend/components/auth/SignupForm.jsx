@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import randomWords from 'random-words'
 
 
@@ -43,14 +42,17 @@ class SignupForm extends Component {
         this.setState({ gender: e.currentTarget.value });
     }
     generateRandomUser(){
+        const cap = s => {
+            return s.charAt(0).toUpperCase() + s.slice(1);
+        }
         let un = randomWords() + '@' + randomWords() + '.com';
-        this.setState( { first_name: randomWords(),
-        last_name: randomWords(),
+        this.setState( { first_name: cap(randomWords()),
+        last_name: cap(randomWords()),
         gender: 'other',
         username: un,
         email: un,
         password: randomWords()});
-
+        
     }
 
     render() {

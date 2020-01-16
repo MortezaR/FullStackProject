@@ -1,5 +1,4 @@
 import { connect } from "react-redux";
-import { login } from "../../actions/session";
 
 import AuthView from "./AuthView";
 

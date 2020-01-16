@@ -1,10 +1,10 @@
 import { connect } from "react-redux";
 
-import HomeView from "./HomeView";
+import SearchBar from "./SearchBar";
 
 const mapStateToProps = state => ({
 });
 const mapDispatchToProps = dispatch => ({
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeView);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);

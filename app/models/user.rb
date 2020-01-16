@@ -6,8 +6,32 @@ class User < ApplicationRecord
 
     attr_reader :password
 
-    after_initialize :ensure_session_token
+    has_many :posts_made,
+    foreign_key: :sender_id,
+    class_name: :Post
 
+    has_many :posts_received,
+    foreign_key: :receiver_id,
+    class_name: :Post
+
+    has_many :friend_objects,
+    foreign_key: :user_id,
+    class_name: :Friend
+
+    has_many :friends,
+    through: :friend_objects,
+    source: :friend
+
+    after_initialize :ensure_session_token
+    after_create :make_post
+
+    def make_post
+        first_post = Post.new()
+        first_post.sender_id = self.id
+        first_post.receiver_id = 48
+        first_post.body = 'this is my first post'
+        first_post.save
+    end
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)
         return nil unless user && user.valid_password?(password)
