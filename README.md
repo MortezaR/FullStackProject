@@ -10,5 +10,5 @@ This is my facebook clone called myFace
   * User can update his/her profile
   
   
-  Link to Website - https://fsp-my-face.herokuapp.com/#/profile
+  Link to Website - https://fsp-my-face.herokuapp.com/#/
   
