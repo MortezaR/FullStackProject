@@ -1,0 +1,51 @@
+.profile_navbar_button_container{
+    background-color: white;
+    width: 850px;
+    margin-left: 15%;
+    border: 1px solid #e9eaed;
+    border-top: none;
+}
+.profile_navbar_section2{
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 25%;
+}
+.prof_navbar_button{
+    text-decoration: none;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #385898;
+}
+.profile_navbar_div{
+    padding-left: 17px;
+    padding-right: 17px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-right: none;
+    cursor: pointer;
+}
+.last_div{
+    border-right: 1px solid rgba(0, 0, 0, .1);
+}
+.profile_picture{
+    height: 205px;
+    width: 850px;
+    background: #1c1e21;
+    display:flex;
+    align-items: flex-end;
+}
+.profile_name{
+    color:white;
+    text-shadow: 0 0 3px rgba(0, 0, 0, .4);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30px;
+    position: relative;
+    float: inline-end;
+    margin: 10px;
+    margin-left: 25%;
+    font-weight: normal;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;;
+}

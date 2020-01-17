@@ -11,7 +11,6 @@ class HomeView extends Component {
         return (
             <div>
                 <NavbarContainer />
-                <h1>THIS IS THE HOME VIEW</h1>
                 <PostIndexContainer />
             </div>
         )

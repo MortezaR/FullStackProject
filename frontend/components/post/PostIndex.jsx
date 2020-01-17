@@ -9,7 +9,6 @@ class PostIndex extends Component {
     }
     componentDidMount(){
         this.props.fetchPosts(this.props.currentUser.id)
-        // this.setState({posts: this.props.fetchPosts(this.props.currentUser)});
     }
     render() {
         return (
@@ -19,13 +18,12 @@ class PostIndex extends Component {
                     <PostFormContainer />
                 </div>
                 <br></br>
+                <div id='post_header'>Posts</div>
                 <ul>
                     {
-                        // if(this.props.posts !== {}){
                         this.props.posts.map((post) => (
                             <PostContainer key={post.id} post={post}/>
                         ))
-                        // }
                     }
                 </ul>
             </div>

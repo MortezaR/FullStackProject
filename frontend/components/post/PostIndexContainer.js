@@ -2,7 +2,6 @@ import { connect } from "react-redux";
 
 import PostIndex from "./PostIndex";
 import {fetchPosts} from "../../actions/post_actions";
-import {fetchUser} from '../../actions/user_actions'
 
 const mapStateToProps = state => {
     return({

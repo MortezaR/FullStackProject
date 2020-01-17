@@ -28,14 +28,13 @@ class PostForm extends Component {
     }
     render() {
         return (
-            <div>
+            <div className='post_form_wrapper'>
                 <div className='post_form_title'>
                     Create Post
                 </div>
-                <form onSubmit ={this.handleSubmit}>
-                    <textarea placeholder='What is on your mind?'
-                    value={this.state.post.body} onChange={this.handleText}></textarea>
-
+                <form className='post_form' onSubmit ={this.handleSubmit}>
+                    <input type='text' wrap="hard" className='post_form_textarea' placeholder='What is on your mind?'
+                    value={this.state.post.body} onChange={this.handleText}></input>
                     <button className='submit_form_button'
                      disabled={this.state.post.body === ''}>Post</button>
                 </form>

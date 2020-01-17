@@ -14,17 +14,15 @@ class ProfileView extends Component {
     }
     render() {
         return (
-            <div>
+            <div className='profile_view'>
                 <div>
                     <NavBar />
                     <ProfileNavBarContainer />
-                    <h1>THIS IS THE PROFILE VIEW</h1>
                     <ProfileIntroContainer />
                     <PostIndexContainer />
                 </div>
-                <Route exact path='/profile/about' Component={ProfileAboutContainer} />
                 <Switch>
-                    <Route exact path='./profile/about' Component={ProfileAboutContainer}/>
+                    <ProtectedRoute path='/profile/about' component={ProfileAboutContainer}/>
                 </Switch>
             </div>
         )

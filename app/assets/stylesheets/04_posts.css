@@ -1,0 +1,76 @@
+.unselectable {
+    user-select: none;
+}
+.submit_form_button{
+    width: 442px;
+    height: 26px;
+    padding-left: 16px;
+    padding-right: 16px;
+    user-select: none;
+    border: 1px solid;
+    border-radius: 2px;
+    font-size: 12px;
+    font-weight: bold;
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #4267b2;
+    border-color: #4267b2;
+    line-height: 22px;
+    color: white;
+    margin-left: 40px;
+}
+.submit_form_button:hover{
+    background-color: #2851A3;
+}
+.post_form_title{
+    display:flex;
+    align-items: center;
+    width: 500px;
+    padding: 8px;
+    height: 16px;
+    border: 1px solid #dddfe2;
+    border-radius: 5px 5px 0 0;
+    background-color: #e9ebee;
+    color: #4A4A4A;
+    font-size: 12px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
+    font-weight: bold;
+}
+.post_form_wrapper{
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    margin-left: 25%
+}
+.post_form{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+.post_form_textarea{
+    width: 498px;
+    padding: 8px;
+    font-size: 24px;
+    font-weight: 400;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+    overflow: hidden;
+
+}
+.post_wrapper{
+    margin-left: 25%;
+    width: 500px;
+    height: 220px;
+    border: 1px solid black;
+}
+#post_header{
+    margin-top:8px;
+    margin-bottom:4px;
+    margin-left: 25%;
+    color: #606770;
+    font-weight: 600;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
+
+}
