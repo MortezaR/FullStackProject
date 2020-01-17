@@ -6,7 +6,7 @@ import ProfileIntroContainer from './ProfileIntroContainer';
 import ProfileNavBarContainer from './prof_navbar/ProfileNavBarContainer';
 import { ProtectedRoute } from '../../util/RouteUtil';
 import ProfileAboutContainer from './prof_navbar/ProfileAboutContainer';
-import ProfileIndex from './ProfileIndex'
+
 
 class ProfileView extends Component {
     constructor(props) {
@@ -14,15 +14,9 @@ class ProfileView extends Component {
     }
     render() {
         return (
-            <div className='profile_view'>
-                <div>
-                    <NavBar />
-                    <ProfileNavBarContainer />
-                </div>
-                <Switch>
-                    <ProtectedRoute exact path='/profile' component={ProfileIndex} />
-                    <ProtectedRoute path='/profile/about' component={ProfileAboutContainer}/>
-                </Switch>
+            <div className='profile_index'>
+                <ProfileIntroContainer />
+                <PostIndexContainer />
             </div>
         )
     }

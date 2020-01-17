@@ -9,8 +9,87 @@
     flex-direction: column;
     margin-left: 15%;
     width:850px;
-    border: 1px solid black;
+    border: 1px solid #d3d6db;
+    background: white;
+}
+.profile_about_title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 15px;
+    margin-left: 15%;
+    width:800px;
+    border: 1px solid #d3d6db;
+    background: #f5f6f7;
+    border-bottom: 1px solid #d3d6db;
+    border-radius: 2px 2px 0 0;
+    height: 28px;
+    padding-top:14px;
+    padding-bottom:14px;
+    padding-left: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
+    color: #1c1e21;
+
 }
 .profile_about_input{
+    width: 750px;
+    margin: 10px;
+    margin-left: 10%;
+    color: #3578e5;
+    font-size: 16px;
+    line-height: 20px;
+    border:none;
+}
+.profile_about_input_header{
+    width: 750px;
+    margin: 10px;
+    margin-left: 10%;
+    border-bottom: 1px solid #dddfe2;
+    line-height: 26px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
+    color: #90949c;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
     
+}
+.hidden_submit_button { 
+    visibility: hidden;
+}
+.profile_index{
+    display: flex;
+    margin-left: 15%;
+}
+
+.profile_intro_wrapper {
+    width: 321px;
+    height: 390px;
+    border: 1px solid #dddfe2;
+    margin-right: -120px;
+    margin-top: 20px;
+    background: white;
+}
+
+.profile_intro_title {
+    font-size: 16px;
+    line-height: 20px;
+    color: #1c1e21;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
+    margin: 15px;
+    margin-top: 15px;
+    padding-left: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dddfe2;
+
+}
+
+.profile_into_list_item{
+    margin: 20px;
+    margin-left: 40px;
+        color: #90949c;
+            font-size: 12px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
+
 }

@@ -35,28 +35,32 @@ class ProfileAbout extends Component {
         const {user} = this.state;
         return (
             <div>
+                <div className='profile_about_title'>About</div>
                 <div className='profile_about_wrapper'>
                     <form onSubmit={this.handleSubmit}>
-                        <div className='profile_about_input'>
-                            <input placeholder='Add a workplace'
+                        <div className=''>
+                            <div className='profile_about_input_header'>Work</div>
+                            <input className='profile_about_input' placeholder='Add a workplace'
                                 value={user.work_place !== null 
                                 ? user.work_place : ''}
                             onChange={this.handleWorkPlace} />
                         </div>
-                        <div className='profile_about_input'>
-                            <input placeholder='Add your current city'
+                        <div className=''>
+                            <div className='profile_about_input_header'>Work</div>
+                            <input className='profile_about_input' placeholder='Add your current city'
                             value={user.current_city !== null
                                 ? user.current_city : ''}
                             onChange={this.handleCurrentCity} />
                         </div>
-                        <div className='profile_about_input'>
-                            <input placeholder='Add your relationship status'
+                        <div className=''>
+                            <div className='profile_about_input_header'>Work</div>
+                            <input className='profile_about_input' placeholder='Add your relationship status'
                                 value={user.relationship_status !== null
                                     ? user.relationship_status : ''}
                             onChange={this.handleRelationshipStatus} />
                         </div>
-                        <div className='profile_about_input'>
-                            <input type='submit' />
+                        <div className=''>
+                            <input type='submit' className='hidden_submit_button'/>
                         </div>
 
                     </form>

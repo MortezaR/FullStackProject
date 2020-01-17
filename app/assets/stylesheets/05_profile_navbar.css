@@ -11,20 +11,25 @@
     padding-left: 25%;
 }
 .prof_navbar_button{
+    display: flex;
+    align-items: center;
     text-decoration: none;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     font-weight: bold;
     font-size: 14px;
     color: #385898;
+    height: 34px;
+    cursor: pointer;
 }
 .profile_navbar_div{
     padding-left: 17px;
     padding-right: 17px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    height: 34px;
+    /* padding-top: 10px;
+    padding-bottom: 10px; */
     border: 1px solid rgba(0, 0, 0, .1);
     border-right: none;
-    cursor: pointer;
+    
 }
 .last_div{
     border-right: 1px solid rgba(0, 0, 0, .1);
