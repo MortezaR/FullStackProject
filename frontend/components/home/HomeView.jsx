@@ -9,7 +9,7 @@ class HomeView extends Component {
     }
     render() {
         return (
-            <div>
+            <div className='home_view'>
                 <NavbarContainer />
                 <PostIndexContainer />
             </div>

@@ -31,7 +31,7 @@
     height: 16px;
     border: 1px solid #dddfe2;
     border-radius: 5px 5px 0 0;
-    background-color: #e9ebee;
+    background-color: #f5f6f7;
     color: #4A4A4A;
     font-size: 12px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
@@ -57,20 +57,62 @@
     margin-bottom: 10px;
     word-wrap: break-word;
     overflow: hidden;
+    margin-top: -2px;
 
 }
 .post_wrapper{
+    background-color: white;
+    margin: 10px;
     margin-left: 25%;
-    width: 500px;
-    height: 220px;
-    border: 1px solid black;
+    width: 516px;
+    height: inherit;
+    border: 1px solid #cbcfd6;
+
 }
 #post_header{
     margin-top:8px;
-    margin-bottom:4px;
+    margin-bottom:15px;
     margin-left: 25%;
     color: #606770;
+    font-size: 13px;
     font-weight: 600;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
+}
+.post_names{
+    padding: 5px;
+    padding-top: 12px;
+    margin-left: 40px;
+    color: #385898;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 12px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
 
+}
+
+.post_date{
+    color: #616770;
+    font-size: 12px;
+    padding: 5px;
+    margin-left: 40px;
+    padding-top: 0px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
+}
+
+.post_body{
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 28px;
+    word-wrap: break-word;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+.post_profile_picture{
+
+}
+.post_footer{
+    border-top: 0.5px solid #cbcfd6;
 }

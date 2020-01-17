@@ -1,4 +1,16 @@
 .profile_view{
     background: #e9ebee;
     height: 100%;
+    min-height: 100vh;
+}
+
+.profile_about_wrapper{
+    display: flex;
+    flex-direction: column;
+    margin-left: 15%;
+    width:850px;
+    border: 1px solid black;
+}
+.profile_about_input{
+    
 }

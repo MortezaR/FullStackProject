@@ -6,16 +6,21 @@ class ProfileView extends Component {
         super(props);
     }
     render() {
+        const {currentUser} = this.props
         return (
-            <div>
+            <div className='profile_intro_wrapper'>
+                <div className='profile_intro_title'>Intro</div>
                 <ul>
-                    <label htmlFor='current_city'>Current City</label>
-                    <label htmlFor='workplace'>Workplace</label>
-                    <label htmlFor='relationship_status'>Relationship Status</label>
-                    <li id='current_city'>{this.props.currentUser.current_city}</li>
-                    <li id='workplace'>{this.props.currentUser.work_place}</li>
-                    <li id='relationship_status'>{this.props.currentUser.relationship_status}</li>
-                    <li>{this.props.currentUser.gender}</li>
+                    <li className='profile_into_list_item'>
+                        {currentUser.current_city !== '' ? 
+                        'Currently lives in' : ''} {currentUser.current_city}</li>
+                    <li className='profile_into_list_item'>
+                        {currentUser.work_place !== '' ?
+                            'Currently works at' : ''} {currentUser.work_place}</li>
+                    <li className='profile_into_list_item'>
+                        {currentUser.relationship_status !== '' ?
+                        currentUser.first_name + ' is ' : ''} {currentUser.relationship_status}</li>
+                    <li className='profile_into_list_item'> {currentUser.gender}</li>
                 </ul>
             </div>
         )

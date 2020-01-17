@@ -19,9 +19,9 @@ class ProfileView extends Component {
                     <NavBar />
                     <ProfileNavBarContainer />
                     <ProfileIntroContainer />
-                    <PostIndexContainer />
                 </div>
                 <Switch>
+                    <ProtectedRoute exact path='/profile' component={PostIndexContainer} />
                     <ProtectedRoute path='/profile/about' component={ProfileAboutContainer}/>
                 </Switch>
             </div>
