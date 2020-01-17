@@ -5,6 +5,10 @@ myFace
 This is my facebook clone called myFace
 
 -Functionality
-  User can log in and log out
-  User can make posts and delete posts
-  User can update his/her profile
+  * User can log in and log out
+  * User can make posts and delete posts
+  * User can update his/her profile
+  
+  
+  Link to Website - https://fsp-my-face.herokuapp.com/#/profile
+  
