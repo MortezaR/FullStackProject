@@ -28,9 +28,11 @@ class User < ApplicationRecord
     def make_post
         first_post = Post.new()
         first_post.sender_id = self.id
-        first_post.receiver_id = 1
+        first_post.receiver_id = User.first.id
         first_post.body = 'this is my first post'
-        first_post.save
+        if (User.find(first_post.receiver_id))
+            first_post.save
+        end
     end
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)

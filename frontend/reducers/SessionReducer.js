@@ -5,7 +5,6 @@ const SessionReducer = (prevState = {id: null}, action) => {
     let nextState = {};
     switch(action.type){
         case RECEIVE_CURRENT_USER:
-            console.log(action);
             nextState = Object.assign({}, prevState, {id: action.payload.user.id});
             return nextState;
         case LOGOUT_CURRENT_USER:
