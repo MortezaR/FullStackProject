@@ -28,7 +28,7 @@ class User < ApplicationRecord
     def make_post
         first_post = Post.new()
         first_post.sender_id = self.id
-        first_post.receiver_id = 48
+        first_post.receiver_id = 1
         first_post.body = 'this is my first post'
         first_post.save
     end

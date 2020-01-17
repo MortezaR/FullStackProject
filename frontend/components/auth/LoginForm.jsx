@@ -34,7 +34,7 @@ class LoginForm extends Component {
         return (
             <div className='login_form'>
                 {/* <img src={logo} alt="Logo" />; */}
-                <div id='facebook_logo'>Facebook</div>
+                <div id='facebook_logo'>myFace</div>
                 <ul>
                     {
                         this.props.errors.map(error => {

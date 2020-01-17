@@ -61,14 +61,14 @@ class SignupForm extends Component {
                 <div className='sign_up_ad_section'>
                     <h1 className='sign_up_ad_section_header'>
                         Connect with friends and the <br></br>
-                        world around you on Facebook.
+                        world around you on myFace.
                     </h1>
                     <p className='sign_up_ad_section_body'><span className='sign_up_ad_section_body_span1'>See photos and updates</span>
                     <span className='sign_up_ad_section_body_span2'> from friends in News Feed.</span></p>
                     <p className='sign_up_ad_section_body'><span className='sign_up_ad_section_body_span1'>Share what's new</span>
                     <span className='sign_up_ad_section_body_span2'> in your life on your Timeline.</span></p>
                     <p className='sign_up_ad_section_body'><span className='sign_up_ad_section_body_span1'>Find more</span>
-                    <span className='sign_up_ad_section_body_span2'> of what you're looking for with Facebook Search.</span></p>
+                        <span className='sign_up_ad_section_body_span2'> of what you're looking for with myFace Search.</span></p>
                 </div>
                 <div className='sign_up_section'>
                     <h1 className='sign_up_header'>

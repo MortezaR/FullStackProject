@@ -7,7 +7,6 @@ class ProfileView extends Component {
     }
     render() {
         const {currentUser} = this.props
-        console.log(currentUser.current_city);
         return (
             <div className='profile_intro_wrapper'>
                 <div className='profile_intro_title'>Intro</div>
