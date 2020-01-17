@@ -47,8 +47,8 @@ class Post extends Component {
                         {this.props.post.body}
                     </div>
                     <div className='post_footer'>
-                        <button onClick={this.handleDelete}>
-                            Delete me Fam
+                        <button className='delete_post_button' onClick={this.handleDelete}>
+                            Delete Post
                         </button>
                     </div>
                 </div>

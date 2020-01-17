@@ -19,6 +19,9 @@ class Buttons extends Component {
                 <div className='navbar_button_div'>
                     <button className='navbar_button'>More Buttons</button>
                 </div>
+                <div className='navbar_button_div'>
+                    <button onClick={this.props.logout} className='logout_button'>Log Out</button>
+                </div>
             </div>
         )
     }

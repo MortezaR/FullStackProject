@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import GreetingContainer from '../home/GreetingContainer'
 import ButtonsContainer from './ButtonsContainer';
 import SearchBar from './SearchBar';
 
@@ -13,7 +12,6 @@ class NavBar extends Component {
             <div className='navbar'>
                 <SearchBar />
                 <ButtonsContainer />
-                <GreetingContainer />
             </div>
         )
     }

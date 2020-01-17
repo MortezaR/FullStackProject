@@ -63,3 +63,25 @@
 .navbar_search_button:hover {
     background: #eceef0;
 }
+
+.logout_button{
+    color: white;
+    background-color: #3578E5;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 18px;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin:10px;
+    white-space: nowrap;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+}
+.logout_button:hover{
+    background-color: #3b5998;
+}
