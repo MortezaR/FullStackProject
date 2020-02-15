@@ -15,7 +15,7 @@
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "webpack": "^4.41.5",
-    "yarn": "^1.21.1"
+    "yarn": "^1.22.0"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
