@@ -1,13 +1,13 @@
 class Api::PostsController < ApplicationController
     def index
         inId = params[:user_id]
-        
         @posts = User.find_by(id: inId).posts_made
         @posts.push(User.find_by(id: inId).posts_received)
 
-        if !(is_user_or_friend?(inId.to_i))
-            render json: {errors: ['you do not have access to this user'] }
-        elsif (@posts)
+        # if !(is_user_or_friend?(inId.to_i))
+        #     render json: {errors: ['you do not have access to this user'] }
+        # els
+        if (@posts)
             render :index
         else
             render json: {errors: ['no posts for user']}

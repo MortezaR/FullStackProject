@@ -1,11 +1,11 @@
-export const fetchUser = (cur_user) => {
+export const fetchUser = (user) => {
     return ($.ajax({
-        url: `/api/users/${cur_user}`
+        url: `/api/users/${user}`
     }));
 };
-export const updateUser = (cur_user, user) => {
+export const updateUser = (user) => {
     return ($.ajax({
-        url: `/api/users/${cur_user}`,
+        url: `/api/users/${user}`,
         method:"PATCH",
         data: {user},
         dataType: "JSON"

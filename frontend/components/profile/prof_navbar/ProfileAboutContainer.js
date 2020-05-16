@@ -1,13 +1,16 @@
 import { connect } from "react-redux";
-import {updateUser} from '../../../actions/user_actions'
+import { updateUser, fetchUser} from '../../../actions/user_actions'
 import ProfileAbout from "./ProfileAbout";
+import { withRouter } from "react-router-dom";
 
-const mapStateToProps = (state) => ({
-    currentUser: state.entities.users[state.session.id],
-    user: state.entities.users[state.session.id]
+const mapStateToProps = (state, ownProps) => ({
+    current_user: state.entities.users[state.session.id],
+    user: state.entities.users[ownProps.match.params.id],
+    user_id: ownProps.match.params.id
 });
 const mapDispatchToProps = dispatch => ({
-    updateUser: (cur_user, user) => dispatch(updateUser(cur_user, user))
+    updateUser: (user) => dispatch(updateUser(user)),
+    fetchUser: (user) => dispatch(fetchUser(user))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProfileAbout);
+export default withRouter (connect(mapStateToProps, mapDispatchToProps)(ProfileAbout));

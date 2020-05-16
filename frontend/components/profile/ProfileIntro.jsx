@@ -1,30 +1,40 @@
 import React, { Component } from 'react'
 
 
-class ProfileView extends Component {
+class ProfileIntro extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            loaded:false
+        };
+    }
+    componentDidMount(){
+        const fetchUser = this.props.fetchUser(this.props.user_id)
+        Promise.all([fetchUser]).then(() => {this.setState({loaded:true})})
     }
     render() {
-        const {currentUser} = this.props
+        if(!this.state.loaded){
+            return (<div></div>)
+        }
+        const {user} = this.props
         return (
             <div className='profile_intro_wrapper'>
                 <div className='profile_intro_title'>Intro</div>
                 <ul>
                     <li className='profile_into_list_item'>
-                        {currentUser.current_city !== '' && currentUser.current_city !== null ? 
-                        'Currently lives in' : 'Current City'} {currentUser.current_city}</li>
+                        {user.current_city !== '' && user.current_city !== null ? 
+                        'Currently lives in' : 'Current City'} {user.current_city}</li>
                     <li className='profile_into_list_item'>
-                        {currentUser.work_place !== '' && currentUser.work_place !== null ?
-                            'Currently works at' : 'Work Place'} {currentUser.work_place}</li>
+                        {user.work_place !== '' && user.work_place !== null ?
+                            'Currently works at' : 'Work Place'} {user.work_place}</li>
                     <li className='profile_into_list_item'>
-                        {currentUser.relationship_status !== '' && currentUser.relationship_status !== null ?
-                        currentUser.first_name + ' is ' : 'Relationship Status'} {currentUser.relationship_status}</li>
-                    {/* <li className='profile_into_list_item'> {currentUser.gender}</li> */}
+                        {user.relationship_status !== '' && user.relationship_status !== null ?
+                        user.first_name + ' is ' : 'Relationship Status'} {user.relationship_status}</li>
+                    {/* <li className='profile_into_list_item'> {user.gender}</li> */}
                 </ul>
             </div>
         )
     }
 }
 
-export default ProfileView;
+export default ProfileIntro;

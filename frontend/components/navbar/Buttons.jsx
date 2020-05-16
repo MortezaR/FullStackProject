@@ -11,7 +11,7 @@ class Buttons extends Component {
         return (
             <div className='navbar_button_container'>
                 <div className='navbar_button_div'>
-                    <Link to='/profile' className='navbar_button'>{currentUser.first_name}</Link>
+                    <Link to={'/profile/' + currentUser.id} className='navbar_button'>{currentUser.first_name}</Link>
                 </div>
                 <div className='navbar_button_div'>
                     <Link to='/' className='navbar_button'>Home</Link>

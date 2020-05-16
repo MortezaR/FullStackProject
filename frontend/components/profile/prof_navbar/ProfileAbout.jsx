@@ -9,7 +9,9 @@ class ProfileAbout extends Component {
         this.handleCurrentCity = this.handleCurrentCity.bind(this);
         this.handleRelationshipStatus = this.handleRelationshipStatus.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.state = props;
+        this.state = {
+            user: this.props.user
+        };
     }
     handleWorkPlace(e){
         let newUser = Object.assign({}, this.state.user);
@@ -29,7 +31,7 @@ class ProfileAbout extends Component {
     handleSubmit(e){
         e.preventDefault();
         console.log(this.state);
-        this.props.updateUser(this.props.currentUser.id, this.state.user)
+        this.props.updateUser(this.state.user)
     }
     render() {
         const {user} = this.state;
@@ -46,14 +48,14 @@ class ProfileAbout extends Component {
                             onChange={this.handleWorkPlace} />
                         </div>
                         <div className=''>
-                            <div className='profile_about_input_header'>Work</div>
+                            <div className='profile_about_input_header'>Current City</div>
                             <input className='profile_about_input' placeholder='Add your current city'
                             value={user.current_city !== null
                                 ? user.current_city : ''}
                             onChange={this.handleCurrentCity} />
                         </div>
                         <div className=''>
-                            <div className='profile_about_input_header'>Work</div>
+                            <div className='profile_about_input_header'>Relationship Status</div>
                             <input className='profile_about_input' placeholder='Add your relationship status'
                                 value={user.relationship_status !== null
                                     ? user.relationship_status : ''}

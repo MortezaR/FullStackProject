@@ -5,18 +5,15 @@ import {formatDate} from '../../util/DateUtil'
 class Post extends Component {
     constructor(props) {
         super(props);
-        this.sender;
-        this.receiver;
         this.componentWillReceiveProps;
         this.state = {post:this.props.post};
-        this.props = props;
         this.handleDelete = this.handleDelete.bind(this);
     }
     componentDidMount(){
         const fetchUser = this.props.fetchUser(this.props.post.sender_id)
-            .then(sender => {this.sender = sender.payload.user;});
+            .then(sender => {this.setState({sender: sender.payload.user})});
         const fetchUser2 = this.props.fetchUser(this.props.post.receiver_id)
-            .then(receiver => { this.receiver = receiver.payload.user;});
+            .then(receiver => { this.setState({ receiver: receiver.payload.user })});
         Promise.all([fetchUser, fetchUser2])
             .then(() => this.setState({ loaded: true }))
     }
@@ -24,24 +21,27 @@ class Post extends Component {
         this.props.deletePost(this.props.currentUser.id, this.props.post.id);
     }
     render() {
+        if (!this.state.loaded) {
+            return (<div></div>)
+        }
+        let {sender, receiver} = this.state
         return (
             <div>
                 <div className='post_wrapper'>
                     <div className='post_names'>
                         <span className='post_profile_picture'></span>
                         <span className='post_sender'>
-                        {this.state.loaded ? this.sender.first_name + " "
-                        + this.sender.last_name : ''}
+                        {sender.first_name + " "
+                        + sender.last_name}
                         </span>
-                        <span className='post_arrow'> {this.state.loaded && this.sender.id !== this.receiver.id ? '>' : ''} </span>
+                        <span className='post_arrow'> {this.state.loaded && sender.id !== receiver.id ? '>' : ''} </span>
                         <span className='post_receiver'>
-                        {this.state.loaded && this.sender.id !== this.receiver.id ? this.receiver.first_name + " "
-                        + this.receiver.last_name : ''}
+                        {this.state.loaded && sender.id !== receiver.id ? receiver.first_name + " "
+                        + receiver.last_name : ''}
                         </span>
                     </div>
                     <div className='post_date'>
-                        <span>{this.state.loaded ? 
-                        formatDate(this.state.post.created_at): ''}</span>
+                        <span>{formatDate(this.state.post.created_at)}</span>
                     </div>
                     <div className='post_body'>
                         {this.props.post.body}

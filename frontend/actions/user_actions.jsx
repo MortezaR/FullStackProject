@@ -13,15 +13,15 @@ const receiveErrors = (payload) => ({
 });
 
 
-export const fetchUser = (cur_user) => dispatch => {
-    return (UserApiUtil.fetchUser(cur_user).then(
+export const fetchUser = (user) => dispatch => {
+    return (UserApiUtil.fetchUser(user).then(
         payload => dispatch(receiveUser(payload)),
         payload => dispatch(receiveErrors(payload.responseJSON))
     ));
 }
 
-export const updateUser = (cur_user, user) => dispatch => {
-    return(UserApiUtil.updateUser(cur_user, user).then(
+export const updateUser = (user) => dispatch => {
+    return(UserApiUtil.updateUser(user).then(
         payload => dispatch(receiveUser(payload)),
         payload => dispatch(receiveErrors(payload.responseJSON))
     ));

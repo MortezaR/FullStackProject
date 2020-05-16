@@ -11,17 +11,28 @@ import ProfileIndex from './ProfileIndex'
 class ProfileView extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            loaded: false
+        }
+    }
+    componentDidMount(){
+        const fetchUser = this.props.fetchUser(this.props.user_id)
+        Promise.all([fetchUser]).then(() => { this.setState({ loaded: true }) })
     }
     render() {
+        if(!this.state.loaded){
+            return <div></div>
+        }
         return (
             <div className='profile_view'>
                 <div>
                     <NavBar />
-                    <ProfileNavBarContainer />
+                    <ProfileNavBarContainer user_id={this.props.user_id}/>
                 </div>
                 <Switch>
-                    <ProtectedRoute exact path='/profile' component={ProfileIndex} />
-                    <ProtectedRoute path='/profile/about' component={ProfileAboutContainer}/>
+                    <ProtectedRoute exact path='/profile/:id' component={ProfileIndex} />
+                    <ProtectedRoute path='/profile/:id/about' component={ProfileAboutContainer} />
+                    
                 </Switch>
             </div>
         )
