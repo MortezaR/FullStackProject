@@ -9,4 +9,8 @@ class Post < ApplicationRecord
     foreign_key: :receiver_id,
     class_name: :User
 
+    has_many :comments,
+    foreign_key: :reply_to_id,
+    class_name: :Post
+
 end

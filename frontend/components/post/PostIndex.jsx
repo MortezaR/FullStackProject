@@ -11,12 +11,20 @@ class PostIndex extends Component {
         }
     }
     componentDidMount(){
-        // debugger;
         const fetchUser = this.props.fetchUser(this.props.user_id)
             .then((user) => {
                 this.props.fetchPosts(user.payload.user.id)
             })
         Promise.all([fetchUser]).then(() => { this.setState({ loaded: true }) })
+    }
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.user_id !== this.props.user_id) {
+            const fetchUser = this.props.fetchUser(this.props.user_id)
+                .then((user) => {
+                    this.props.fetchPosts(user.payload.user.id)
+                })
+            Promise.all([fetchUser]).then(() => { this.setState({ loaded: true }) })
+        }
     }
     render() {
         if (!this.state.loaded) {
@@ -26,15 +34,20 @@ class PostIndex extends Component {
             <div>
                 <br></br>
                 <div>
-                    <PostFormContainer />
+                    <PostFormContainer user_id={this.props.user_id}/>
                 </div>
                 <br></br>
                 <div id='post_header'>Posts</div>
                 <ul>
                     {
-                        this.props.posts.map((post) => (
-                            <PostContainer key={post.id} post={post}/>
-                        ))
+                        
+                        this.props.posts.map((post) => {
+                            if(post.reply_to_id !== undefined && post.reply_to_id === null){
+                                return (<PostContainer key={post.id} post={post}
+                                user={this.props.user}/>)
+                            }
+                        }
+                        )
                     }
                 </ul>
             </div>

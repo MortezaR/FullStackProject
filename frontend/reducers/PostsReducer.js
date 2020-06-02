@@ -1,7 +1,8 @@
 import { 
     RECEIVE_POST,
     RECEIVE_POSTS,
-    REMOVE_POST } from "../actions/post_actions";
+    REMOVE_POST,
+    RECEIVE_COMMENTS } from "../actions/post_actions";
 
 const PostsReducer = (prevState = {}, action) => {
     Object.freeze(prevState);
@@ -9,6 +10,9 @@ const PostsReducer = (prevState = {}, action) => {
     switch (action.type) {
         case RECEIVE_POSTS:
             return action.payload;
+        case RECEIVE_COMMENTS:
+            nextState['comments'] = action.payload
+            return nextState
         case RECEIVE_POST:
             nextState[action.payload.post.id] = action.payload.post;
             return nextState;

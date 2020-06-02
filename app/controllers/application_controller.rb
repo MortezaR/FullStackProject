@@ -29,14 +29,14 @@ class ApplicationController < ActionController::Base
     end
 
     def is_user_or_friend?(user_id)
-        if current_user.id == user_id
-            return true;
+        return true if is_user?(user_id) || is_friend?(user_id)
+        return false
+    end
+    def is_friend?(user_id)
+        user = User.find(user_id)
+        if current_user.friends.include?(user) && user.friends.include?(current_user)
+            return true
         end
-        current_user.friends.pluck('friend_id').each do |friendId|
-            if friendId == user_id
-                return true
-            end
-        end
-        return false;
+        return false
     end
 end

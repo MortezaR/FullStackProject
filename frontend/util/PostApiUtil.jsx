@@ -1,6 +1,11 @@
-export const fetchPosts = cur_user => {
+export const fetchPosts = user => {
     return ($.ajax({
-        url: `/api/users/${cur_user}/posts`
+        url: `/api/users/${user}/posts`
+    }));
+};
+export const fetchComments = (user,post_id) => {
+    return ($.ajax({
+        url: `/api/users/${user}/posts/${post_id}/comments`
     }));
 };
 export const fetchPost = (cur_user, postId) => {

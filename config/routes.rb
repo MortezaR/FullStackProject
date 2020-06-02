@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do 
     resources :users, only: [:create, :show, :update] do
       resources :posts, except: [:edit, :new]
-      resources :friends, only: [:create, :destroy]
+      get '/posts/:id/comments', to: 'posts#comments'
+      resources :friends, only: [:show, :create, :destroy]
     end
     resource :session, only: [:create, :destroy]
   end

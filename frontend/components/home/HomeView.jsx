@@ -11,7 +11,7 @@ class HomeView extends Component {
         return (
             <div className='home_view'>
                 <NavbarContainer />
-                <PostIndexContainer />
+                <PostIndexContainer user={this.props.currentUser}/>
             </div>
         )
     }

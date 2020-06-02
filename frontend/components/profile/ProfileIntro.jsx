@@ -12,11 +12,17 @@ class ProfileIntro extends Component {
         const fetchUser = this.props.fetchUser(this.props.user_id)
         Promise.all([fetchUser]).then(() => {this.setState({loaded:true})})
     }
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.user_id !== this.props.user_id) {
+            this.props.fetchUser(this.props.user_id)
+                .then(() => { this.setState({ loaded: true }) })
+        }
+    }
     render() {
-        if(!this.state.loaded){
+        const {user} = this.props
+        if(!this.state.loaded || !user){
             return (<div></div>)
         }
-        const {user} = this.props
         return (
             <div className='profile_intro_wrapper'>
                 <div className='profile_intro_title'>Intro</div>

@@ -6,7 +6,7 @@ class PostForm extends Component {
         super(props);
         this.state = {post:{
             sender_id: this.props.currentUser.id,
-            receiver_id: this.props.currentUser.id,
+            receiver_id: this.props.user_id,
             body: ""
         }};
         this.handleText = this.handleText.bind(this);
@@ -20,6 +20,7 @@ class PostForm extends Component {
     }
     handleSubmit(e) {
         e.preventDefault();
+
         const post = Object.assign({}, this.state.post);
         this.props.createPost(this.props.currentUser.id, post);
         let newPostState = Object.assign({}, this.state.post);

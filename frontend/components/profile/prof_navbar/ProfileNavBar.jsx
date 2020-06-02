@@ -13,21 +13,26 @@ class ProfileNavBar extends Component {
         const fetchUser = this.props.fetchUser(this.props.user_id)
         Promise.all([fetchUser]).then(() => { this.setState({ loaded: true }) })
     }
+    componentDidUpdate(prevProps, prevState){
+        if(prevProps.user_id !== this.props.user_id){
+            this.props.fetchUser(this.props.user_id)
+                .then(() => { this.setState({ loaded: true }) })
+        }
+    }
     render() {
-        if (!this.state.loaded) {
+        let {user} = this.props;
+        if (!this.state.loaded || !user) {
             return (<div></div>)
         }
-        let {user} = this.props;
+
         return (
             <div className='profile_navbar_button_container'>
                 <div className='profile_navbar_section'>
                     <div className='profile_picture'>
                         <div className='profile_name'>
-                            {this.props.user.first_name + " " + this.props.user.last_name}
+                            {user.first_name + " " + user.last_name}
                         </div>
                     </div>
-                    
-
                 </div>
                 <div className='profile_navbar_section2'>
                     <div className='profile_navbar_div'>
