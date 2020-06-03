@@ -1,29 +1,41 @@
 class Api::FriendsController < ApplicationController
 
+    def index
+        
+        friendsAndFriendReq = User.find(params[:user_id]).friends.load_target
+        @users = []
+        debugger
+        friendsAndFriendReq.each do |friend|
+            if friend.friends.includes?(User.find(params[:id]))
+                @users.push(friend)
+            end
+        end
+        render 'users/index'
+    end
     def show
-        @fob = Friend.find(friend_params)
-        if @fob
+        @friend = Friend.find_by(user_id: params[:id], friend_id:params[:user_id])
+        if @friend
             render :show
         else
-            render json: {errors: @fob.errors.full_messages}, status: 422
+            render json: {friend: false}
         end
     end
 
     def create
-        @fob = Friend.new(friend_params)
-        if @fob.save
+        @friend = Friend.new(friend_params)
+        if @friend.save!
             render :show
         else
-            render json: {errors: @fob.errors.full_messages}, status: 422
+            render json: {errors: @friend.errors.full_messages}, status: 422
         end
     end
 
     def destroy
-        @fob = Friend.find(params[:id])
-        if destroy(@fob)
+        @friend = Friend.find_by(user_id: params[:user_id], friend_id:params[:id])
+        if @friend.destroy
             render json: {}
         else
-            render json: {errors: @fob.errors.full_messages}, status: 422
+            render json: {errors: @friend.errors.full_messages}, status: 422
         end
     end
     private

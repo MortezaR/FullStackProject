@@ -3,6 +3,12 @@ export const fetchFriend = (cur_user, friendId) => {
         url: `/api/users/${cur_user}/friends/${friendId}`
     }));
 };
+export const fetchFriends = (user) => {
+    return ($.ajax({
+        url: `/api/users/${user}/friends/`
+    }));
+};
+
 export const createFriend = (cur_user, friend) => {
     return ($.ajax({
         url: `/api/users/${cur_user}/friends`,

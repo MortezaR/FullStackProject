@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :show, :update] do
       resources :posts, except: [:edit, :new]
       get '/posts/:id/comments', to: 'posts#comments'
-      resources :friends, only: [:show, :create, :destroy]
+      resources :friends, only: [:index, :show, :create, :destroy]
     end
     resource :session, only: [:create, :destroy]
   end

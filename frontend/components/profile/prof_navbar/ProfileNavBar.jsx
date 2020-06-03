@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import FriendButtonContainer from '../../friend/FriendButtonContainer'
 
 
 class ProfileNavBar extends Component {
@@ -43,6 +44,9 @@ class ProfileNavBar extends Component {
                     </div>
                     <div className='profile_navbar_div last_div'>
                         <Link to={'/profile/' + user.id + '/friends'}   className='prof_navbar_button'>Friends</Link>
+                    </div>
+                    <div className='profile_navbar_div last_div'>
+                        <FriendButtonContainer user_id={this.props.user_id} />
                     </div>
                 </div>
             </div>

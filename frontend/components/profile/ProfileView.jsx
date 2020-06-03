@@ -5,6 +5,7 @@ import ProfileNavBarContainer from './prof_navbar/ProfileNavBarContainer';
 import { ProtectedRoute } from '../../util/RouteUtil';
 import ProfileAboutContainer from './prof_navbar/ProfileAboutContainer';
 import ProfileIndexContainer from './ProfileIndexContainer'
+import ProfileFriendsContainer from './prof_navbar/ProfileFriendsContainer'
 
 class ProfileView extends Component {
     constructor(props) {
@@ -36,6 +37,7 @@ class ProfileView extends Component {
                 <Switch>
                     <ProtectedRoute exact path='/profile/:id' component={ProfileIndexContainer} />
                     <ProtectedRoute path='/profile/:id/about' component={ProfileAboutContainer} />
+                    <ProtectedRoute path='/profile/:id/friends' component={ProfileFriendsContainer} />
                     
                 </Switch>
             </div>
