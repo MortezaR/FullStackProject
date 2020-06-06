@@ -3,8 +3,8 @@ import {
     RECEIVE_FRIENDS,
     REMOVE_FRIEND
 } from "../actions/friend_actions"
-
-const PostsReducer = (prevState = {}, action) => {
+const FriendsReducer = (prevState = {}, action) => {
+    // debugger
     Object.freeze(prevState);
     let nextState = Object.assign({}, prevState)
     switch (action.type) {
@@ -12,6 +12,7 @@ const PostsReducer = (prevState = {}, action) => {
         //     nextState[action.payload.friend.id] = action.payload.friend;
         //     return nextState;
         case RECEIVE_FRIENDS:
+            // debugger
             return action.payload;
         // case REMOVE_FRIEND:
         //     delete nextState[action.friendId];
@@ -21,4 +22,4 @@ const PostsReducer = (prevState = {}, action) => {
     }
 };
 
-export default PostsReducer;
+export default FriendsReducer;

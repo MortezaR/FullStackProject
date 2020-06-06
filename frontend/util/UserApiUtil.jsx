@@ -3,6 +3,16 @@ export const fetchUser = (user) => {
         url: `/api/users/${user}`
     }));
 };
+
+
+export const searchUser = (user) => {
+    return ($.ajax({
+        url: `/api/users/serach`,
+        method:"GET",
+        data: {user},
+        dataType: "JSON"
+    }));
+};
 export const updateUser = (user) => {
     return ($.ajax({
         url: `/api/users/${user}`,

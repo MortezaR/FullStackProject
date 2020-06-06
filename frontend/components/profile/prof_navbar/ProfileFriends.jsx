@@ -21,12 +21,11 @@ class ProfileFriends extends Component {
         }
     }
     render() {
-        if (!this.state.loaded || !user) {
+        if (!this.state.loaded) {
             return (<div></div>)
         }
         return (
             <div>
-                THIS IS THE FRIENDS TAB
                 <div id='friends-header'>Friends</div>
                 <ul>
                     {

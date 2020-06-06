@@ -26,8 +26,14 @@ class Api::UsersController < ApplicationController
         else
             render json: {errors: @post.errors.full_messages}, status: 422
         end
-        
+    end
 
+    def search
+        debugger
+        @users = User.where("lower(first_name) LIKE '#{params[:search]}%' OR
+                             lower(last_name) LIKE '#{params[:search]}%'")
+                             .limit(8)
+        render :index
     end
     private
     def user_params

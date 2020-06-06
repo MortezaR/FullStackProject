@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 
 class FriendShow extends Component {
@@ -6,9 +7,12 @@ class FriendShow extends Component {
         super(props);
     }
     render() {
+        const {friend} = this.props
         return (
             <div>
-                THIS IS A FRIEND
+                <Link to={'/profile/' + friend.id}>
+                    {friend.first_name + " " + friend.last_name}
+                </Link>
             </div>
         )
     }

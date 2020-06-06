@@ -4,13 +4,14 @@ class Api::FriendsController < ApplicationController
         
         friendsAndFriendReq = User.find(params[:user_id]).friends.load_target
         @users = []
-        debugger
+        # debugger
         friendsAndFriendReq.each do |friend|
-            if friend.friends.includes?(User.find(params[:id]))
+            if friend.friends.include?(User.find(params[:user_id]))
                 @users.push(friend)
             end
         end
-        render 'users/index'
+        # debugger
+        render 'api/users/index'
     end
     def show
         @friend = Friend.find_by(user_id: params[:id], friend_id:params[:user_id])

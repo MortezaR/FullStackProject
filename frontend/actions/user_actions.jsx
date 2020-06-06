@@ -19,6 +19,12 @@ export const fetchUser = (user) => dispatch => {
         payload => dispatch(receiveErrors(payload.responseJSON))
     ));
 }
+export const searchUser = (user) => dispatch => {
+    return (UserApiUtil.searchUser(user).then(
+        payload => dispatch(receiveUser(payload)),
+        payload => dispatch(receiveErrors(payload.responseJSON))
+    ));
+}
 
 export const updateUser = (user) => dispatch => {
     return(UserApiUtil.updateUser(user).then(

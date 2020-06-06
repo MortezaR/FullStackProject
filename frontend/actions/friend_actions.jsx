@@ -10,7 +10,7 @@ const receiveFriend = payload => ({
     payload
 });
 const receiveFriends = payload => ({
-    type: RECEIVE_FRIEND,
+    type: RECEIVE_FRIENDS,
     payload
 });
 const removeFriend = friendId => ({

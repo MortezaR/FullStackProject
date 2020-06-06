@@ -6,7 +6,7 @@ const mapStateToProps = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
     user: state.entities.users[ownProps.match.params.id],
     user_id: ownProps.match.params.id,
-    friends: state.entities.friends
+    friends: Object.values(state.entities.friends)
 });
 const mapDispatchToProps = dispatch => ({
     fetchFriends: (user) => dispatch(fetchFriends(user)),
