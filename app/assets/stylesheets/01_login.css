@@ -92,3 +92,6 @@
     font-family: Facebook Letter Faces, Arial;
     color: white;
 }
+#login_form_button:focus {
+    outline: none;
+}

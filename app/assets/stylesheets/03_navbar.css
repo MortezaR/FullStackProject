@@ -1,22 +1,23 @@
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     background-color: #4267b2;
     border-bottom: 1px solid #29487d;
     color: #fff;
-    padding-left: 15%;
+    /* padding-left: 15%; */
 }
 .navbar > * {
-    margin-left: 10px;
+    /* margin-left: 10px; */
+    margin: 0;
+    padding: 0;
 }
 .navbar_button_container {
     display: flex;
-    
+    margin-right: 13%;
 }
-
 .navbar_button {
-    width: 60px;
+    width: 75px;
     height: 30px;
     background-color: inherit;
     border: none;
@@ -36,10 +37,13 @@
     height: 50px;
 }
 .navbar_form {
+    display: flex;
+    padding-left: 200px;
+    width: fit-content;
 }
 .navbar_search {
-    width: 393px;
-    height: 23px;
+    width: 494px;
+    height: 23.1px;
     font-size: 14px;
     line-height: 22px;
 }
@@ -63,7 +67,6 @@
 .navbar_search_button:hover {
     background: #eceef0;
 }
-
 .logout_button{
     color: white;
     background-color: #3578E5;
@@ -84,4 +87,7 @@
 }
 .logout_button:hover{
     background-color: #3b5998;
+}
+.fa-facebook-square {
+    color: white;
 }
