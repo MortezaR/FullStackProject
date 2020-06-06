@@ -1,0 +1,71 @@
+.profile-page-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.profile-page-section-container {
+    background-color: white;
+    /* border: 1px solid #e9eaed; */
+    width: 100%;
+    border-radius: 3px;
+    padding: 12px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid #d3d6db; */
+}
+/* .profile-page-section-header {
+    height: 58px;
+    background-color: #f5f6f7;
+    border-bottom: 1px solid #d3d6db;
+    box-sizing: border-box;
+} */
+.profile-page-section-body {
+    min-height: 300px;
+}
+.friends ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 13px;
+    margin-right: 13px;
+}
+.friends ul li {
+    display: inline-block;
+    width: 50%;
+    padding-left: 13px;
+    padding-bottom: 13px; 
+    box-sizing: border-box;
+}
+.friends-border {
+    border: 1px solid #e9ebee;
+    display: flex;
+    justify-content: space-between;
+}
+.friends-image-name {
+    display: flex;
+}
+.friends-image {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    margin-right: 10px;
+}
+.friends-image-name a {
+    text-decoration: none;
+}
+.friends p.friend-name-p {
+    color: #385898;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0;
+    padding-top: 42px;
+    text-transform: capitalize;
+}
+.friend-name-p:hover {
+    text-decoration: underline;
+}
+.not_nav {
+    width: 850px;
+    margin: 0 auto;
+}

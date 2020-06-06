@@ -29,9 +29,9 @@ class Api::UsersController < ApplicationController
     end
 
     def search
-        debugger
-        @users = User.where("lower(first_name) LIKE '#{params[:search]}%' OR
-                             lower(last_name) LIKE '#{params[:search]}%'")
+        # debugger
+        @users = User.where("lower(first_name) LIKE '#{params[:user]}%' OR
+                             lower(last_name) LIKE '#{params[:user]}%'")
                              .limit(8)
         render :index
     end

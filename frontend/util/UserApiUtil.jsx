@@ -7,7 +7,7 @@ export const fetchUser = (user) => {
 
 export const searchUser = (user) => {
     return ($.ajax({
-        url: `/api/users/serach`,
+        url: `/api/users/search`,
         method:"GET",
         data: {user},
         dataType: "JSON"

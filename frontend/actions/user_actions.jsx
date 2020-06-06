@@ -1,10 +1,15 @@
 export const RECEIVE_USER = "RECEIVE_USER"
+export const RECEIVE_USERS = "RECEIVE_USERS"
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS"
 import * as UserApiUtil from '../util/UserApiUtil'
 
 
 const receiveUser = payload => ({
     type: RECEIVE_USER,
+    payload
+});
+const receiveUsers = payload => ({
+    type: RECEIVE_USERS,
     payload
 });
 const receiveErrors = (payload) => ({
@@ -21,7 +26,7 @@ export const fetchUser = (user) => dispatch => {
 }
 export const searchUser = (user) => dispatch => {
     return (UserApiUtil.searchUser(user).then(
-        payload => dispatch(receiveUser(payload)),
+        payload => dispatch(receiveUsers(payload)),
         payload => dispatch(receiveErrors(payload.responseJSON))
     ));
 }
