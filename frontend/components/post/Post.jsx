@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {formatDate} from '../../util/DateUtil'
-import PostContainer from './PostContainer' 
+import CommentContainer from './CommentContainer' 
 import CommentFormContainer from './CommentFormContainer'
 import {Link} from 'react-router-dom'
 
@@ -34,9 +34,12 @@ class Post extends Component {
             <div>
                 <div className='post_wrapper'>
                         <div className='post_footer'>
-                            <button className='delete_post_button' onClick={this.handleDelete}>
-                                Delete Post
-                            </button>
+                        {
+                            sender.id === this.props.currentUser.id ?
+                                (<button className='delete_post_button' onClick={this.handleDelete}>
+                                    Delete Post
+                                </button>) : ""
+                        }
                         </div>
                         <div className='post_names'>
                             <span className='post_profile_picture'></span>
@@ -60,20 +63,21 @@ class Post extends Component {
                         {this.props.post.body}
                     </div>
                     <div>
+                        <div>
+                            <CommentFormContainer post={this.state.post} />
+                        </div>
                         <ul>
                             {
                                 this.props.comments.map((post) => {
                                     if (post.reply_to_id === this.props.post.id) {
-                                        return (<PostContainer key={post.id} post={post}
+                                        return (<CommentContainer key={post.id} post={post}
                                             user={this.props.user} />)
                                     }
                                 })
                             }
                         </ul>
                     </div>
-                    <div>
-                        <CommentFormContainer post={this.state.post}/>
-                    </div>
+                    
                 </div>
             </div>
         )

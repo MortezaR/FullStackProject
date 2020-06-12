@@ -11,7 +11,7 @@ const PostsReducer = (prevState = {}, action) => {
         case RECEIVE_POSTS:
             return action.payload;
         case RECEIVE_COMMENTS:
-            nextState['comments'] = action.payload
+            nextState = Object.assign({}, prevState, action.payload)
             return nextState
         case RECEIVE_POST:
             nextState[action.payload.post.id] = action.payload.post;

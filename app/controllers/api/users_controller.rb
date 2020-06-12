@@ -18,10 +18,12 @@ class Api::UsersController < ApplicationController
         end
     end
     def update
-        @user = User.find_by(id: params[:id])
-        if !(is_user?(params[:id].to_i))
-            render json: {errors: ['you do not have access to this user'] }, status: 400
-        elsif @user.update(user_params)
+        # debugger
+        @user = User.find_by(id: params[:user][:id])
+        # if !(is_user?(params[:id].to_i))
+        #     render json: {errors: ['you do not have access to this user'] }, status: 400
+        # els
+        if @user.update(user_params)
             render :show
         else
             render json: {errors: @post.errors.full_messages}, status: 422

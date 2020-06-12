@@ -1,0 +1,81 @@
+.unselectable {
+    user-select: none;
+}
+.comment_form_wrapper{
+    /* display: flex; */
+    /* align-items: center; */
+    /* flex-direction: column;
+    margin-left: 25% */
+}
+.comment_form{
+}
+.comment_form_textarea{
+    width: 450px;
+    padding: 8px;
+    margin-left: 20px;
+    font-size: 24px;
+    font-weight: 400;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
+    /* margin-bottom: 5px; */
+    word-wrap: break-word;
+    overflow: hidden;
+
+}
+.comments_comments{
+    margin-left: 5%;
+}
+.comment_wrapper{
+    background-color: #EDF0F5;
+    margin: 5px;
+    margin-left: 5%;
+    /* width: 516px; */
+    height: inherit;
+    /* border: 1px solid #cbcfd6; */
+    border-radius: 15px;
+
+}
+.comment_body_full{
+    padding: 2px;
+    /* margin: 5px; */
+    margin-left: 10 px;
+    padding: 5px;
+}
+.comment_names{
+    color: #385898;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 12px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
+
+}
+.comment_body{
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0;
+    /* line-height: 20px; */
+    word-wrap: break-word;
+    margin-left: 5px;
+    /* margin-top: px;
+    margin-bottom: 8px; */
+}
+
+.comment_footer{
+    /* border-top: 0.5px solid #cbcfd6; */
+    float: right;
+}
+.comment_buttons{
+    padding-left: 10px;
+    display: flex;  
+}
+.comment_button{
+    cursor: pointer;
+    font-size: 10px;
+    padding-right: 8px;
+}
+.see_comment_button{
+    cursor: pointer;
+    font-size: 10px;
+    padding-right: 8px;
+    padding-left: 15px;
+}

@@ -42,6 +42,15 @@
     line-height: 20px;
     border:none;
 }
+.profile_about_no_input{
+    width: 750px;
+    margin: 10px;
+    margin-left: 10%;
+    color: #90949c;
+    font-size: 16px;
+    line-height: 20px;
+    border:none;
+}
 .profile_about_input_header{
     width: 750px;
     margin: 10px;

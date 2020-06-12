@@ -32,6 +32,11 @@ class CommentForm extends Component {
         let newPostState = Object.assign({}, this.state.post);
         newPostState.body = '';
         this.setState({ post: newPostState });
+        if (this.props.isFromComment){
+            this.setState({loaded: false});
+            this.props.handleSeeCommentForm();
+            this.props.handleSeeComments();
+        }
     }
     render() {
         if (!this.state.loaded) {
@@ -39,11 +44,11 @@ class CommentForm extends Component {
         }
         return (
             <div className='comment_form_wrapper'>
-                <form className='post_form' onSubmit={this.handleSubmit}>
-                    <input type='text' wrap="hard" className='post_form_textarea' placeholder='Write a comment...'
+                <form className='comment_form' onSubmit={this.handleSubmit}>
+                    <input type='text' wrap="hard" className='comment_form_textarea' placeholder='Add a comment'
                         value={this.state.post.body} onChange={this.handleText}></input>
-                    <button className='submit_form_button'
-                        disabled={this.state.post.body === ''}>Comment</button>
+                    <button className='hidden_submit_button'
+                        disabled={this.state.post.body === ''}>Post Comment</button>
                 </form>
             </div>
         )
