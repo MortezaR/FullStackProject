@@ -32,14 +32,16 @@ class ProfileView extends Component {
             <div className='profile_view'>
                 <div>
                     <NavBar />
-                    <ProfileNavBarContainer user_id={this.props.user_id}/>
                 </div>
-                <Switch>
-                    <ProtectedRoute exact path='/profile/:id' component={ProfileIndexContainer} />
-                    <ProtectedRoute path='/profile/:id/about' component={ProfileAboutContainer} />
-                    <ProtectedRoute path='/profile/:id/friends' component={ProfileFriendsContainer} />
-                    
-                </Switch>
+                <div className='not_nav'>
+                    <ProfileNavBarContainer user_id={this.props.user_id}/>
+                    <Switch>
+                        <ProtectedRoute exact path='/profile/:id' component={ProfileIndexContainer} />
+                        <ProtectedRoute path='/profile/:id/about' component={ProfileAboutContainer} />
+                        <ProtectedRoute path='/profile/:id/friends' component={ProfileFriendsContainer} />
+                        
+                    </Switch>
+                </div>
             </div>
         )
     }

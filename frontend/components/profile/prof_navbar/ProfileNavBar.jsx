@@ -33,6 +33,9 @@ class ProfileNavBar extends Component {
                         <div className='profile_name'>
                             {user.first_name + " " + user.last_name}
                         </div>
+                        <div className='last_div'>
+                            <FriendButtonContainer user_id={this.props.user_id} />
+                        </div>
                     </div>
                 </div>
                 <div className='profile_navbar_section2'>
@@ -44,9 +47,6 @@ class ProfileNavBar extends Component {
                     </div>
                     <div className='profile_navbar_div last_div'>
                         <Link to={'/profile/' + user.id + '/friends'}   className='prof_navbar_button'>Friends</Link>
-                    </div>
-                    <div className='profile_navbar_div last_div'>
-                        <FriendButtonContainer user_id={this.props.user_id} />
                     </div>
                 </div>
             </div>

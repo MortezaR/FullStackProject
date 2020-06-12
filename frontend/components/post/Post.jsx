@@ -33,21 +33,26 @@ class Post extends Component {
         return (
             <div>
                 <div className='post_wrapper'>
-                    <div className='post_names'>
-                        <span className='post_profile_picture'></span>
-                        <span className='post_sender'>
-                            <Link to={'/profile/' + sender.id}>
-                            {sender.first_name + " " + sender.last_name}
-                            </Link>
-                        </span>
-                        <span className='post_arrow'> { sender.id !== receiver.id ? '>' : ''} </span>
-                        <span className='post_receiver'>
-                            <Link to={'/profile/' + receiver.id}>
-                            { sender.id !== receiver.id ? receiver.first_name + " "
-                            + receiver.last_name : ''}
-                            </Link>
-                        </span>
-                    </div>
+                        <div className='post_footer'>
+                            <button className='delete_post_button' onClick={this.handleDelete}>
+                                Delete Post
+                            </button>
+                        </div>
+                        <div className='post_names'>
+                            <span className='post_profile_picture'></span>
+                            <span className='post_sender'>
+                                <Link to={'/profile/' + sender.id}>
+                                {sender.first_name + " " + sender.last_name}
+                                </Link>
+                            </span>
+                            <span className='post_arrow'> { sender.id !== receiver.id ? '>' : ''} </span>
+                            <span className='post_receiver'>
+                                <Link to={'/profile/' + receiver.id}>
+                                { sender.id !== receiver.id ? receiver.first_name + " "
+                                + receiver.last_name : ''}
+                                </Link>
+                            </span>
+                        </div>
                     <div className='post_date'>
                         <span>{formatDate(this.state.post.created_at)}</span>
                     </div>
@@ -68,11 +73,6 @@ class Post extends Component {
                     </div>
                     <div>
                         <CommentFormContainer post={this.state.post}/>
-                    </div>
-                    <div className='post_footer'>
-                        <button className='delete_post_button' onClick={this.handleDelete}>
-                            Delete Post
-                        </button>
                     </div>
                 </div>
             </div>

@@ -74,12 +74,12 @@ class FriendButton extends Component {
         }else if (friend && !friendRequest){
             this.friendStatus = "accept friend request"
         }else{
-            this.friendStatus = "add friend"
+            this.friendStatus = "＋ add friend"
         }
         return (
-            <div className='navbar_button_div'>
-                <button onClick={this.handleRequest}>{this.friendStatus}</button>
-            </div>  
+            // <div className='navbar_button_div'>
+                <button className='friend-button' onClick={this.handleRequest}>{this.friendStatus}</button>
+            // </div>  
         )
     }
 }

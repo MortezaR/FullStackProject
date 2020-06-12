@@ -69,3 +69,22 @@
     width: 850px;
     margin: 0 auto;
 }
+
+.friend-button {
+    /* border: 0.5px solid red; */
+    padding: 6px 12px;
+    text-transform: capitalize;
+    font-weight: bold;
+    /* color: rgb(90, 93, 96); */
+    background-color: #f9fafc;
+    color: #4b4f56;
+    border: 1px solid rgba(0,0,0,0.4);
+    /* border-radius: 2px; */
+    box-sizing: content-box;
+    font-size: 12px;
+    -webkit-font-smoothing: antialiased;
+    font-weight: bold;
+    cursor: pointer;
+    transition: red 200ms ease-in-out;
+    margin: 0 0 14px 286px;
+}

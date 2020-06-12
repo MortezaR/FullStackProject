@@ -59,7 +59,8 @@
 }
 .profile_index{
     display: flex;
-    /* margin-left: 15%; */
+    margin: auto;
+    width: 850px;
 }
 .profile_intro_wrapper {
     width: 321px;
