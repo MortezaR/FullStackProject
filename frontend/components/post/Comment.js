@@ -82,19 +82,14 @@ class Comment extends Component {
                             })
                         }
                     </ul>
-                    {this.state.seeCommentForm ? <div className='comment_button'>
-                        <CommentFormContainer post={this.state.post} isFromComment={true}
-                        handleSeeCommentForm={this.handleSeeCommentForm} 
-                        handleSeeComments={this.handleSeeComments} 
-                        />
-                    </div> : ""}
+                    
                 <div className='comment_buttons'>
                     <div>
-                            <div className='comment_button' onClick={this.handleSeeCommentForm}>{this.state.seeCommentForm ? "" : "reply "}</div>
+                            <div className='comment_button' onClick={this.handleSeeCommentForm}>{this.state.seeCommentForm ? "" : "Reply "}</div>
                     </div>
                         {
                             sender.id === this.props.currentUser.id ?
-                                (<div className='comment_button' onClick={this.handleDelete}>
+                                (<div className='comment_button delete_comment_button' onClick={this.handleDelete}>
                                     Delete Comment
                                 </div>) : ""
                         }
@@ -103,11 +98,18 @@ class Comment extends Component {
 
                     <div>
                         <div className='see_comment_button' onClick={this.handleSeeComments}>
-                            {hasComments ? <span>&#x21AA;</span> : ""}
-                            {hasComments ?  hasComments + " " + replyText : ""}
+                            {hasComments && replyText === "replies " ? <span>&#x21AA;</span> : ""}
+                            {hasComments && replyText === "replies " ? hasComments + " " : ""}
+                            {hasComments ? replyText : ""}
                         </div>
                     </div>
                 </div>
+                {this.state.seeCommentForm ? <div className='comment_button'>
+                    <CommentFormContainer post={this.state.post} isFromComment={true}
+                        handleSeeCommentForm={this.handleSeeCommentForm}
+                        handleSeeComments={this.handleSeeComments}
+                    />
+                </div> : ""}
             </div>
         )
     }

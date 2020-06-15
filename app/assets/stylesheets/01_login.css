@@ -88,10 +88,15 @@
     color: white;
 }
 .error_message{
-    font-size: 30px;
+    font-size: 14px;
     font-family: Facebook Letter Faces, Arial;
-    color: white;
+    color: red;
 }
 #login_form_button:focus {
     outline: none;
+}
+.login_errors{
+    position: fixed;
+    margin-left: 64%;
+    margin-top: -18px;
 }

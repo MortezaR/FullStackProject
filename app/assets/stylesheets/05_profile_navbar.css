@@ -57,6 +57,7 @@
 .search_dropdown {
 
     position: absolute;
+    z-index: 1;
     margin-top: 29px;
     margin-left: 0px;
     background-color: #fff;
